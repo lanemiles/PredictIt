@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_03_210938) do
+ActiveRecord::Schema.define(version: 2018_09_03_232033) do
 
   create_table "contracts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2018_09_03_210938) do
     t.text "name"
     t.text "long_name"
     t.text "short_name"
-    t.text "ticket_symbol"
     t.string "status"
     t.index ["market_id"], name: "index_contracts_on_market_id"
   end
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 2018_09_03_210938) do
   create_table "markets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "end_date"
     t.integer "predictit_id"
     t.text "name"
     t.text "short_name"
