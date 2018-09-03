@@ -15,8 +15,6 @@ class MarketsController < ApplicationController
 
   def create
 
-    puts "CREATING MARKET: #{params[:market_json]['ID'].to_i}"
-
     market_json = params[:market_json]
     market = Market.find_or_create_by(predictit_id: market_json['ID'].to_i)
 
