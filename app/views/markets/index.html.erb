@@ -1,0 +1,7 @@
+<h1>Markets</h1>
+
+<ul>
+<% @markets.each do |market| %>
+  <li><%= market.name %> | <%= link_to "Show", market %></li>
+<% end %>
+</ul>

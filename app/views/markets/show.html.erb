@@ -1,0 +1,7 @@
+<h1><%= @market.name %></h1>
+
+<ul>
+<% @market.attributes.keys.each do |attr| %>
+  <li><b><%= attr %></b> | <%= @market.attributes[attr] %></li>
+<% end %>
+</ul>
