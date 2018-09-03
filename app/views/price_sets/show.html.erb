@@ -1,0 +1,7 @@
+<h1><%= @price_set.created_at %></h1>
+
+<ul>
+<% @price_set.attributes.keys.each do |attr| %>
+  <li><b><%= attr %></b> | <%= @price_set.attributes[attr] %></li>
+<% end %>
+</ul>

@@ -5,3 +5,10 @@
   <li><b><%= attr %></b> | <%= @market.attributes[attr] %></li>
 <% end %>
 </ul>
+
+<br>
+<ul>
+<% @market.contract.each do |contract| %>
+  <li><b><%= contract.name %></b> | <%= link_to "Show", contract %></li>
+<% end %>
+</ul>

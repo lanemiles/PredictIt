@@ -1,0 +1,14 @@
+<h1><%= @contract.name %></h1>
+
+<ul>
+<% @contract.attributes.keys.each do |attr| %>
+  <li><b><%= attr %></b> | <%= @contract.attributes[attr] %></li>
+<% end %>
+</ul>
+
+<br>
+<ul>
+<% @contract.price_set.each do |price_set| %>
+  <li><b><%= price_set.created_at %></b> | <%= link_to "Show", price_set %></li>
+<% end %>
+</ul>

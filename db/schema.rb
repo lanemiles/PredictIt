@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_03_040423) do
+ActiveRecord::Schema.define(version: 2018_09_03_210938) do
 
   create_table "contracts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,12 +25,6 @@ ActiveRecord::Schema.define(version: 2018_09_03_040423) do
     t.text "short_name"
     t.text "ticket_symbol"
     t.string "status"
-    t.float "last_trade_price"
-    t.float "best_buy_yes_cost"
-    t.float "best_buy_no_cost"
-    t.float "best_sell_yes_cost"
-    t.float "best_sell_no_cost"
-    t.float "last_close_price"
     t.index ["market_id"], name: "index_contracts_on_market_id"
   end
 
@@ -45,6 +39,19 @@ ActiveRecord::Schema.define(version: 2018_09_03_040423) do
     t.text "image"
     t.text "url"
     t.string "status"
+  end
+
+  create_table "price_sets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "last_trade_price"
+    t.float "best_buy_yes_cost"
+    t.float "best_buy_no_cost"
+    t.float "best_sell_yes_cost"
+    t.float "best_sell_no_cost"
+    t.float "last_close_price"
+    t.integer "contract_id"
+    t.index ["contract_id"], name: "index_price_sets_on_contract_id"
   end
 
 end
