@@ -79,15 +79,13 @@ class MarketsController < ApplicationController
       JSON.parse(http.request(req).body)
     end
 
-    res['Markets'].each do |market_json|
+    res[res.keys.first].each do |market_json|
       market_url = request.original_url.gsub(/update/, "markets")
       uri = URI(market_url)
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Post.new(uri.path)
       request['Content-Type'] = "application/json"
       request.body = {market_json: market_json}.to_json
-      p request.body
-      p market_url
       http.request(request)
     end
 
