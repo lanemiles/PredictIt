@@ -30,7 +30,7 @@ class MarketsController < ApplicationController
     market.assign_attributes(data)
     market.save
 
-    market_json['Contracts'].each do |contract_json|
+    market_json['contracts'].each do |contract_json|
 
       contract = Contract.find_or_create_by(predictit_id: contract_json['ID'].to_i)
 
